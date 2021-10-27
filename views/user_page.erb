@@ -1,0 +1,12 @@
+<h1><%= params[:name] %></h1>
+
+<h4>Email:</h4>
+<p><%= @users[@name][:email] %></p>
+
+<h4>Interests:</h4>
+<p><%= @users[@name][:interests].join(", ") %></p>
+
+<% @users.keys.each do |user| %>
+  <% next if user == @name %>
+  <a href="/<%= user %>"><%= user %></a>
+<% end %>
